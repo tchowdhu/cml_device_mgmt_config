@@ -1,0 +1,15 @@
+aaa new-model
+aaa local authentication default authorization default
+
+snmp-server community {{ readonly_com }} RO
+snmp-server community {{ readwrite_com }} RW
+
+interface GigabitEthernet1
+ ip address {{ management_ip }} {{ mask }}
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 {{ gateway }}
+!
+ip ssh version 2
+netconf ssh
+!
