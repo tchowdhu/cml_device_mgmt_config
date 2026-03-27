@@ -225,7 +225,9 @@ class CML:
             template_vars = {
                 "management_ip": ip_address,
                 "mask": netmask,
-                "gateway": gateway
+                "gateway": gateway,
+                "readonly_com": snmp_ro,
+                "readwrite_com": snmp_rw
             }
             rendered_config=None
             if node['type'] == 'ios_xr':
